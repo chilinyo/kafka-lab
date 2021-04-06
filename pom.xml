@@ -12,6 +12,7 @@
         <module>producer</module>
         <module>consumer</module>
         <module>streams</module>
+        <module>lab-02</module>
     </modules>
 
 

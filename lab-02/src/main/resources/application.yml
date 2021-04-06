@@ -1,0 +1,32 @@
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      acks: 1
+      retries: 3
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      batch-size: 16384 # 批量发送最大消息条数
+      buffer-memory: 33554432 # 批量发送最大消息内存 32M
+      properties:
+        linger:
+          ms: 30000 # 处理批量消息的时间等待上限 30s
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.chilin.kafkalab.lab02.message
+    listener:
+      missing-topics-fatal: false
+
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        kafka: ERROR
+#      apache:
+#        kafka: ERROR

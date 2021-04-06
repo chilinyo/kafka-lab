@@ -1,6 +1,5 @@
-package com.chilin.kafkalab.producer;
+package com.chilin.kafkalab.lab01.producer;
 
-import com.sun.javafx.binding.StringFormatter;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
